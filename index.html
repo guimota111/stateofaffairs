@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>State of Affairs</title>
+  <meta name="description" content="Estado dos meus projetos: resumo, últimas atualizações e snippets de mudanças, com geração de prompt pelo Claude.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">🧭</span>
+      <div>
+        <h1>State of Affairs</h1>
+        <p class="muted small" id="generatedAt"></p>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <span class="sync-badge" id="syncBadge" title="Estado da sincronização dos snippets"></span>
+      <button class="btn ghost" id="settingsBtn" type="button" aria-label="Configurações">⚙️ Ajustes</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- Seletor de projeto -->
+    <section class="picker" id="picker">
+      <button class="picker-toggle" id="pickerToggle" type="button" aria-expanded="true" aria-controls="pickerPanel">
+        <span class="picker-label">Projeto</span>
+        <span class="picker-current" id="pickerCurrent">Escolha um projeto</span>
+        <span class="chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="picker-panel" id="pickerPanel">
+        <input type="search" id="pickerSearch" placeholder="Buscar projeto, stack, assunto…  ( / )" autocomplete="off">
+        <div id="pickerGroups"></div>
+      </div>
+    </section>
+
+    <!-- Projeto selecionado -->
+    <section id="projectView" hidden>
+      <article class="card project-head">
+        <div class="project-title-row">
+          <h2 id="pName"></h2>
+          <span class="pill" id="pStatus"></span>
+          <span class="pill subtle" id="pVisibility"></span>
+        </div>
+        <p class="lead" id="pSummary"></p>
+        <div class="chips" id="pStack"></div>
+        <div class="links" id="pLinks"></div>
+      </article>
+
+      <div class="grid">
+        <article class="card">
+          <div class="card-head">
+            <h3>Últimas atualizações</h3>
+            <span class="muted small" id="pLast"></span>
+          </div>
+          <ol class="timeline" id="pUpdates"></ol>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <h3>Snippets de mudanças</h3>
+            <label class="toggle small"><input type="checkbox" id="showDone"> mostrar feitos</label>
+          </div>
+          <form id="snippetForm" class="snippet-form">
+            <input id="snTitle" type="text" maxlength="120" placeholder="Título curto (ex.: Modo escuro no relatório)" required>
+            <textarea id="snBody" rows="3" placeholder="O que você quer mudar? Detalhes, telas, comportamento esperado…"></textarea>
+            <div class="row">
+              <select id="snPriority" aria-label="Prioridade">
+                <option value="normal">Prioridade normal</option>
+                <option value="alta">Prioridade alta</option>
+                <option value="baixa">Prioridade baixa</option>
+              </select>
+              <button class="btn primary" type="submit">+ Adicionar snippet</button>
+            </div>
+          </form>
+          <ul class="snippets" id="snippetList"></ul>
+        </article>
+      </div>
+
+      <article class="card generate">
+        <div class="card-head">
+          <h3>Gerar prompt para o Claude</h3>
+          <span class="muted small" id="selCount"></span>
+        </div>
+        <p class="muted small">Envia o contexto do projeto e os snippets marcados para a API do Claude, que devolve um prompt pronto para colar no Claude Code.</p>
+        <textarea id="extraNotes" rows="2" placeholder="Instruções extras para este prompt (opcional)"></textarea>
+        <div class="row wrap-row">
+          <button class="btn primary big" id="generateBtn" type="button">✨ Gerar prompt com Claude</button>
+          <button class="btn ghost" id="localPromptBtn" type="button" title="Monta o prompt sem chamar a API">Montar sem IA</button>
+        </div>
+        <div class="output" id="outputBox" hidden>
+          <div class="output-head">
+            <span class="muted small" id="outputMeta"></span>
+            <button class="btn ghost" id="copyBtn" type="button">📋 Copiar</button>
+          </div>
+          <pre id="output"></pre>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Ajustes -->
+  <dialog id="settingsDialog">
+    <form method="dialog" class="settings">
+      <h3>Ajustes</h3>
+      <p class="muted small">As chaves ficam só neste navegador (localStorage). Nunca são enviadas para o repositório.</p>
+
+      <label>Chave da API do Claude
+        <input id="setApiKey" type="password" autocomplete="off" placeholder="sk-ant-…">
+      </label>
+      <label>Modelo
+        <input id="setModel" type="text" placeholder="claude-opus-5-5">
+      </label>
+
+      <hr>
+      <label>Token do GitHub (fine-grained, <em>Contents: read and write</em> só no repo stateofaffairs)
+        <input id="setGhToken" type="password" autocomplete="off" placeholder="github_pat_…">
+      </label>
+      <label>Repositório dos snippets
+        <input id="setGhRepo" type="text" placeholder="guimota111/stateofaffairs">
+      </label>
+      <label>Branch
+        <input id="setGhBranch" type="text" placeholder="main">
+      </label>
+      <p class="muted small">Sem token, os snippets ficam salvos só neste navegador e aparecem como “pendentes”. Com token, cada mudança vira um commit em <code>data/snippets.json</code> — é de lá que a skill vai ler.</p>
+
+      <div class="row end">
+        <button class="btn ghost" value="cancel" type="submit">Fechar</button>
+        <button class="btn primary" id="saveSettings" value="save" type="submit">Salvar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

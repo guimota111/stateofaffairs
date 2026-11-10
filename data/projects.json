@@ -1,0 +1,613 @@
+{
+  "generatedAt": "2026-11-10",
+  "owner": "guimota111",
+  "categories": [
+    { "id": "trabalho", "name": "Laudos & rotina de trabalho" },
+    { "id": "escalas", "name": "Escalas & produção" },
+    { "id": "estudo", "name": "Estudo & consulta em patologia" },
+    { "id": "pessoal", "name": "Pessoal, casal & amigos" },
+    { "id": "outros", "name": "Outros & arquivados" }
+  ],
+  "projects": [
+    {
+      "id": "fastpath",
+      "name": "FastPath",
+      "repo": "guimota111/FastPath",
+      "visibility": "private",
+      "category": "trabalho",
+      "status": "ativo",
+      "url": null,
+      "stack": ["Tauri 2 (Rust)", "React 18", "TypeScript", "Tailwind", "Zustand", "Firebase Auth/Firestore", "Stripe"],
+      "summary": "App desktop bilíngue (PT-BR/EN) para patologistas automatizarem a digitação de laudos com máscaras customizáveis. Motor de máscaras com campos condicionais, checkboxes e medidas; painel flutuante por atalho; login com trial de 15 dias e licenciamento. É a versão produto/comercial do Sistema GUILIS.",
+      "lastActivity": "2026-09-17",
+      "updates": [
+        { "date": "2026-09-17", "text": "Controle por voz, atalhos, licenciamento (assentos/entitlements) e catálogo de máscaras do GuilisAHK." },
+        { "date": "2026-07-26", "text": "Visibilidade condicional e campos calculados, duplicar máscara e melhorias no editor." },
+        { "date": "2026-07-25", "text": "Negrito/itálico até o laudo final; checkbox com texto 'desmarcado' e multicheck por combinação." },
+        { "date": "2026-07-24", "text": "31 máscaras de Gastro portadas do GuilisAHK (branch DASA) e tipos checkbox/medida." },
+        { "date": "2026-07-24", "text": "UI do 'Assistente de Laudos' implementada a partir do Claude Design; painel flutuante em janela própria." }
+      ]
+    },
+    {
+      "id": "guilisahk",
+      "name": "Sistema GUILIS (GuilisAHK)",
+      "repo": "guimota111/GuilisAHK",
+      "visibility": "private",
+      "category": "trabalho",
+      "status": "ativo",
+      "url": null,
+      "stack": ["AutoHotkey", "Python (CustomTkinter)", "Rust (branch RUST)"],
+      "summary": "O sistema de máscaras de laudos anatomopatológicos que você usa no dia a dia: menu por especialidade, smartcomplete de máscaras, compositor de notas e expansor de atalhos que cola o texto na janela do sistema. Tem branches por serviço (DASA, HUOL) e uma reescrita em Rust (GUILIS RUST), que é onde está a atividade recente.",
+      "lastActivity": "2026-11-03",
+      "updates": [
+        { "date": "2026-11-03", "text": "[RUST] Interface nova: faixa da marca GUILIS RUST, acento violeta e fonte Inter." },
+        { "date": "2026-11-03", "text": "[RUST] Colagem Especial: texto digitado é o texto puro, o RTF só dá a formatação." },
+        { "date": "2026-10-16", "text": "[RUST] Máscaras do usuário com nome no menu e campos entre chaves; atalhos recarregam sem reiniciar." },
+        { "date": "2026-10-15", "text": "[RUST] Reinserir a última máscara e atalhos de digitação do usuário." },
+        { "date": "2026-08-31", "text": "[DASA] Mama: 18 máscaras novas em submenus; novas máscaras de esôfago, estômago, cólon, reto e delgado a partir dos .docx." }
+      ]
+    },
+    {
+      "id": "concierge",
+      "name": "Concierge (Organizador de casos 3)",
+      "repo": "guimota111/Organizador-casos-3",
+      "visibility": "private",
+      "category": "trabalho",
+      "status": "ativo",
+      "url": "https://github.com/guimota111/Organizador-casos-3/releases/latest",
+      "stack": ["Rust", "egui", "CSV local", "GitHub Actions (build Windows)"],
+      "summary": "Programa de mesa para Windows (um .exe em Rust, sem internet) para organizar os casos de patologia que você acompanha: importa do Excel/cola do sistema, controla prazos, pendências com atores e log, e gera mensagens de cobrança e exportação para o WhatsApp. Tudo salvo em CSV ao lado do programa.",
+      "lastActivity": "2026-11-03",
+      "updates": [
+        { "date": "2026-11-03", "text": "Visual novo: fonte Inter, paleta clara/escura, cartões e controles segmentados." },
+        { "date": "2026-10-30", "text": "CI que compila e testa no Windows e publica o concierge.exe nas Releases." },
+        { "date": "2026-10-30", "text": "Pendências com atores, aba própria, log do caso e resumo do dia." },
+        { "date": "2026-10-30", "text": "App renomeado para Concierge; exportação para WhatsApp e mensagem de cobrança por caso." }
+      ]
+    },
+    {
+      "id": "assistente-trabalho",
+      "name": "Assistente de Trabalho (Descritor de Congelações)",
+      "repo": "guimota111/Assistente-trabalho",
+      "visibility": "public",
+      "category": "trabalho",
+      "status": "ativo",
+      "url": "https://guimota111.github.io/Assistente-trabalho/",
+      "stack": ["HTML/CSS/JS vanilla", "Firebase Auth + Firestore", "PWA", "GitHub Pages"],
+      "summary": "PWA de apoio ao trabalho na DASA: descrição de congelações, máscaras de macroscopia (mama, tireoide, linfonodo sentinela, fragmentos), mapeamento de cassetes com cálculo de blocos, cirurgia de Mohs com desenho por quadrantes, timer de isquemia fria, pendências, histórico e estatísticas de produção.",
+      "lastActivity": "2026-09-07",
+      "updates": [
+        { "date": "2026-09-07", "text": "Tema claro/escuro e máscara de linfonodo sentinela." },
+        { "date": "2026-08-26", "text": "Máscara de mama, singular em fragmento único e quebras de linha no papel." },
+        { "date": "2026-08-26", "text": "Mohs: eixo pelo relógio, cassetes flexíveis, cronômetro de isquemia fria, PDF com desenho e envio por e-mail." },
+        { "date": "2026-07-27", "text": "Blocos calculados pelo mapeamento de cassetes; máscaras de tireoide e fragmentos." }
+      ]
+    },
+    {
+      "id": "motion-tampermonkey",
+      "name": "Scripts Tampermonkey (Motion)",
+      "repo": "guimota111/MotionTampermonkey",
+      "visibility": "private",
+      "category": "trabalho",
+      "status": "ativo",
+      "url": "https://guimota111.github.io/MotionTampermonkey/",
+      "stack": ["JavaScript (userscripts)", "Firebase Firestore", "GitHub Pages"],
+      "summary": "Catálogo dos seus userscripts de navegador (categorias, versões e changelog) e os próprios scripts para o sistema Motion e o Philips GO: buscador e extrator de casos, liberação stealth, prancheta de macroscopia, integração com o Chopperverso, gamepad/toque no visualizador de lâminas e contador do Telepato.",
+      "lastActivity": "2026-09-25",
+      "updates": [
+        { "date": "2026-09-25", "text": "Visual do Motion no buscador, no Chopperverso e no popup de lâminas; diagnóstico de estilo para o console." },
+        { "date": "2026-09-23", "text": "Buscador de casos: X fecha, some ao abrir o caso, entra direto no laudo e volta a clicar em Liberar Resultados." },
+        { "date": "2026-09-23", "text": "Prancheta macro: botão direito copia e cola os títulos em negrito no laudo." },
+        { "date": "2026-08-17", "text": "Scripts que só existiam no catálogo foram trazidos para o repo; motor separado da config no Liberar Stealth." }
+      ]
+    },
+    {
+      "id": "arquivo-laudos",
+      "name": "Arquivo de Laudos",
+      "repo": "guimota111/ArquivosLaudos",
+      "visibility": "public",
+      "category": "trabalho",
+      "status": "estável",
+      "url": "https://arquivolaudos.web.app/",
+      "stack": ["React", "Vite", "Firebase Auth + Firestore"],
+      "summary": "Acervo compartilhado de laudos e notas organizados em árvore de categorias sem limite de profundidade (ex.: Gastro → Estômago → Gastrite → Erosiva). Login por e-mail, busca, tags, favoritas, métricas e crédito por nome de quem contribuiu.",
+      "lastActivity": "2026-08-27",
+      "updates": [
+        { "date": "2026-08-27", "text": "Layout de celular com uma tela por vez." },
+        { "date": "2026-08-27", "text": "Cadastro de conta e contribuições creditadas pelo nome; correção das favoritas." },
+        { "date": "2026-07-01", "text": "Reformulação: menu em árvore, login, busca, tags, favoritas e métricas." }
+      ]
+    },
+    {
+      "id": "estadiador",
+      "name": "Estadiador",
+      "repo": "guimota111/Estadiador",
+      "visibility": "public",
+      "category": "trabalho",
+      "status": "estável",
+      "url": "https://guimota111.github.io/Estadiador/",
+      "stack": ["HTML/CSS/JS (ES modules)", "GitHub Pages"],
+      "summary": "Calculadoras de estadiamento tumoral (TNM / AJCC 8ª, protocolos CAP) que devolvem o texto pronto para colar no laudo. Orientado a dados: cada tumor é um módulo. Já cobre colorretal, gástrico, mama (invasivo, CDIS, filoides), TNEs do TGI e pâncreas, adrenal, vias biliares e endométrio (com FIGO 2009/2023).",
+      "lastActivity": "2026-07-07",
+      "updates": [
+        { "date": "2026-07-07", "text": "Endométrio com AJCC 8 + FIGO 2009 + FIGO 2023." },
+        { "date": "2026-07-02", "text": "Redesign com barra lateral; grupo prognóstico removido da saída." },
+        { "date": "2026-07-02", "text": "Vias biliares, TNE de pâncreas, TNEs do TGI, adrenal e mama adicionados." }
+      ]
+    },
+    {
+      "id": "siglas-gu",
+      "name": "GU Macros — Siglas",
+      "repo": "guimota111/SiglasLorennaJH",
+      "visibility": "public",
+      "category": "trabalho",
+      "status": "estável",
+      "url": "https://guimota111.github.io/SiglasLorennaJH/",
+      "stack": ["HTML/CSS/JS", "GitHub Pages"],
+      "summary": "Busca rápida e bilíngue das 278 siglas de patologia geniturinária (GU Macros), por código ou termo clínico, com cópia do código pronto para o sistema de laudos. Funciona offline.",
+      "lastActivity": "2026-06-12",
+      "updates": [
+        { "date": "2026-06-12", "text": "Site criado com as 278 siglas extraídas do GU_Macros_2025_Update_1.docx, interface PT/EN e atalhos de teclado." }
+      ]
+    },
+    {
+      "id": "tma",
+      "name": "TMA Mapper",
+      "repo": "guimota111/tma",
+      "visibility": "public",
+      "category": "trabalho",
+      "status": "estável",
+      "url": "https://guimota111.github.io/tma/",
+      "stack": ["HTML/CSS/JS", "localStorage"],
+      "summary": "Ajuda a ler um TMA (tissue microarray) core por core: monta o mapa de linhas × colunas, destaca o core atual, guarda o resultado de cada um e copia tudo empilhado para colar numa coluna de planilha.",
+      "lastActivity": "2026-06-23",
+      "updates": [
+        { "date": "2026-06-23", "text": "Reconstruído: UI em inglês, pontos rosa, um campo de resultado por core e cópia empilhada." }
+      ]
+    },
+    {
+      "id": "remora",
+      "name": "Remora",
+      "repo": "guimota111/Remora",
+      "visibility": "public",
+      "category": "trabalho",
+      "status": "inicial",
+      "url": null,
+      "stack": ["Python", "Flet", "AutoHotkey (bridge)", "PyInstaller"],
+      "summary": "Esboço de um 'Dashboard do Patologista' desktop em Python/Flet com telas de protocolos CAP, TNM e códigos, inserindo texto no sistema via ponte com AutoHotkey.",
+      "lastActivity": "2026-04-09",
+      "updates": [
+        { "date": "2026-04-09", "text": "Estrutura base: dashboard, views CAP/TNM/códigos e ponte AHK." }
+      ]
+    },
+    {
+      "id": "chopperverso",
+      "name": "Chopperverso",
+      "repo": "guimota111/Chopperverso",
+      "visibility": "private",
+      "category": "escalas",
+      "status": "ativo",
+      "url": "https://chopperverso.web.app/",
+      "stack": ["HTML/CSS/JS", "Firebase Hosting/Firestore/Functions", "Scriptable (iOS)"],
+      "summary": "Controle de produção para os patologistas da DASA com o tema do Chopper: casos, lâminas e pontos do dia, records, observações, relatórios em PDF, aba de laudos, gerador de script Tampermonkey e widget de iOS. Recebe dados por webhook/e-mail.",
+      "lastActivity": "2026-09-25",
+      "updates": [
+        { "date": "2026-09-25", "text": "LGPD: FAP removida dos casos e botão para apagar as FAPs antigas do Firestore." },
+        { "date": "2026-09-23", "text": "Aba Laudos adicionada; Congelações e Feedbacks removidos." },
+        { "date": "2026-09-02", "text": "Mural de feedbacks, relatório PDF melhor, widget do Scriptable e automação por webhook/e-mail." }
+      ]
+    },
+    {
+      "id": "contador-pontos",
+      "name": "Contador de Pontos",
+      "repo": "guimota111/ContadorPontos",
+      "visibility": "private",
+      "category": "escalas",
+      "status": "ativo",
+      "url": "https://organizadorcasos.web.app/",
+      "stack": ["HTML/CSS/JS", "Firebase Auth/Firestore/Hosting", "GitHub Actions"],
+      "summary": "Sucessor enxuto do Chopperverso: o patologista lança os pontos de cada caso liberado e acompanha a produção em gráficos (por dia, tipo, mês, média por dia trabalhado), com calendário de plantões, férias/folgas, observações e imagens. Tem modo rápido para celular.",
+      "lastActivity": "2026-11-05",
+      "updates": [
+        { "date": "2026-11-05", "text": "Modo rápido no celular com teclado próprio e Wake Lock." },
+        { "date": "2026-11-05", "text": "Calendário com imagens e tipo do dia (férias, folga, feriado), média por mês e tela de novidades." },
+        { "date": "2026-11-05", "text": "Deploy automático pelo GitHub Actions a cada push na main." },
+        { "date": "2026-09-30", "text": "Importação dos casos da equipe a partir do CSV do Chopperverso." }
+      ]
+    },
+    {
+      "id": "escala-cong-dasa",
+      "name": "Escala de Congelação DASA",
+      "repo": "guimota111/EscalaDasaCongTeste2",
+      "visibility": "public",
+      "category": "escalas",
+      "status": "estável",
+      "url": "https://guimota111.github.io/EscalaDasaCongTeste2/",
+      "stack": ["React", "Vite", "Tailwind", "Firebase Auth/Firestore"],
+      "summary": "Sistema da escala de congelação dos patologistas da DASA Brasília: cadastro de patologistas e regimes, geração da escala em calendário com restrições, férias, feriados com contabilidade manual, balanceamento, sorteios, histórico e exportação de imagem.",
+      "lastActivity": "2026-08-30",
+      "updates": [
+        { "date": "2026-08-30", "text": "Contabilidade manual de feriados." },
+        { "date": "2026-07-28", "text": "Calendário na geração, restrições, sorteios e balanceamento por escopo." },
+        { "date": "2026-06-29", "text": "Relatórios mensal e anual com gráficos, cor por patologista e exportação de imagem." }
+      ]
+    },
+    {
+      "id": "escala-cong-dasa-next",
+      "name": "EscalaCongDasa (versão Next.js)",
+      "repo": "guimota111/EscalaCongDasa",
+      "visibility": "public",
+      "category": "outros",
+      "status": "arquivado",
+      "url": null,
+      "stack": ["Next.js 14", "TypeScript", "Tailwind", "Supabase"],
+      "summary": "Primeira tentativa da escala de congelação em Next.js + Supabase (gerador automático com regras por hospital). Ficou só no setup inicial; a versão em uso é a EscalaDasaCongTeste2.",
+      "lastActivity": "2026-05-22",
+      "updates": [
+        { "date": "2026-05-22", "text": "Setup inicial: Next.js 14 + Supabase + gerador de escala." }
+      ]
+    },
+    {
+      "id": "guilis-huol",
+      "name": "Guili's HUOL",
+      "repo": "guimota111/GuilisHUOL",
+      "visibility": "public",
+      "category": "escalas",
+      "status": "estável",
+      "url": "https://guimota111.github.io/GuilisHUOL/",
+      "stack": ["HTML/CSS/JS", "GitHub Pages"],
+      "summary": "Sua primeira plataforma, feita para o serviço de patologia do HUOL: escalas (biópsias/citologia, dermato, PICQ), sorteador com roleta e vídeo para auditoria, calculadora e máscara de próstata, citologia cervical, solicitação e tabela de IHQ.",
+      "lastActivity": "2026-08-11",
+      "updates": [
+        { "date": "2026-08-11", "text": "Calculadora de próstata com mapeamento livre de cassetes." },
+        { "date": "2026-08-05", "text": "Sorteador com roleta e exportação do vídeo em MP4/H.264 para o WhatsApp." },
+        { "date": "2026-03-01", "text": "Máscara de citologia cérvico-vaginal e novos campos no formulário de IHQ." }
+      ]
+    },
+    {
+      "id": "patholytics",
+      "name": "Patholytics",
+      "repo": "guimota111/Patholytics",
+      "visibility": "public",
+      "category": "estudo",
+      "status": "ativo",
+      "url": "https://patholytics.web.app/",
+      "stack": ["Vite 7", "React 19", "TypeScript", "Tailwind v4", "i18next", "Firebase"],
+      "summary": "Ferramentas de precisão para patologistas: escores e graduações, estadiamento, Marker Helper (painéis de imuno por órgão), algoritmos diferenciais, conversor de campos e apoio ao TMA. Bilíngue EN/PT-BR.",
+      "lastActivity": "2026-11-08",
+      "updates": [
+        { "date": "2026-11-08", "text": "Conversor de campos: uma conversa só, ramificando conforme onde você reporta." },
+        { "date": "2026-11-08", "text": "Próstata: gradua o nódulo dominante quando o tumor é multifocal; restos do organizador de casos removidos." },
+        { "date": "2026-10-04", "text": "Escores de imuno, outras graduações e controles no TMA." },
+        { "date": "2026-10-02", "text": "Seção de algoritmos diferenciais, começando por neoplasias oncocíticas do rim." },
+        { "date": "2026-09-13", "text": "Marker Helper ampliado: partes moles, osso, pele, hematolinfoide, próstata, TGI, mama, cabeça e pescoço, rim e SNC." }
+      ]
+    },
+    {
+      "id": "pathosteps",
+      "name": "PathoSteps",
+      "repo": "guimota111/PathoSteps",
+      "visibility": "private",
+      "category": "estudo",
+      "status": "ativo",
+      "url": null,
+      "stack": ["React 19", "TypeScript", "Vite 7", "Tailwind v4", "Zustand", "ts-fsrs", "Firebase", "Capacitor"],
+      "summary": "App gamificado no estilo Duolingo para residentes aprenderem patologia cirúrgica: trilha de lições, XP, ofensiva, vidas e revisão espaçada (FSRS). Web/PWA, Android e iOS, em PT-BR e EN.",
+      "lastActivity": "2026-09-18",
+      "updates": [
+        { "date": "2026-09-18", "text": "Unidades 3 a 11 adicionadas: pele, mama, TGI, geniturinário, pulmão, tireoide, linfonodo, gineco e fígado/vias biliares/pâncreas." },
+        { "date": "2026-09-18", "text": "Imagens otimizadas em WebP e fora do precache do PWA." },
+        { "date": "2026-09-18", "text": "Certificado de debug do Android registrado no Firebase." }
+      ]
+    },
+    {
+      "id": "brainpath",
+      "name": "BrainPath",
+      "repo": "guimota111/BrainPath",
+      "visibility": "public",
+      "category": "estudo",
+      "status": "pausado",
+      "url": "https://guimota111.github.io/BrainPath/",
+      "stack": ["React", "TypeScript", "Vite", "GitHub Pages"],
+      "summary": "Site de consulta em patologia onde a informação vira arte interativa: diagramas clicáveis com profundidade em níveis (rótulo → frase → painel), modo treino e estado na URL. Primeiro tema: linfomas B de pequenas células.",
+      "lastActivity": "2026-07-31",
+      "updates": [
+        { "date": "2026-07-31", "text": "Refeito como site de consulta visual e publicado no GitHub Pages com CI." },
+        { "date": "2026-07-28", "text": "Versão anterior como dashboard de widgets (Tldraw + Tiptap)." }
+      ]
+    },
+    {
+      "id": "roadmaps",
+      "name": "Meus Roadmaps",
+      "repo": "guimota111/roadmaps",
+      "visibility": "public",
+      "category": "estudo",
+      "status": "estável",
+      "url": "https://guimota111.github.io/roadmaps/",
+      "stack": ["HTML/CSS/JS", "Firebase (login Google opcional)", "GitHub Pages"],
+      "summary": "Roadmaps de estudo como fluxogramas navegáveis (fases, trilhas paralelas, blocos com recursos, estado, anotações e histórico). Progresso no navegador, com sync opcional. Temas: patologia digital, hemato, cabeça e pescoço, partes moles/osso e torácica.",
+      "lastActivity": "2026-08-18",
+      "updates": [
+        { "date": "2026-08-18", "text": "Quatro roadmaps de patologia diagnóstica adicionados." },
+        { "date": "2026-08-06", "text": "Virou plataforma de múltiplos roadmaps com sincronização Firebase e deploy por workflow." }
+      ]
+    },
+    {
+      "id": "butcherduck",
+      "name": "Butcher Duck",
+      "repo": "guimota111/Butcherduck",
+      "visibility": "public",
+      "category": "estudo",
+      "status": "pausado",
+      "url": "https://guimota111.github.io/Butcherduck/",
+      "stack": ["HTML/CSS/JS", "Node.js + Express (CMS)"],
+      "summary": "Portal de conteúdos de patologia/macroscopia organizado por órgão, com design escuro e um pequeno CMS com autenticação para editar o conteúdo.",
+      "lastActivity": "2026-03-28",
+      "updates": [
+        { "date": "2026-03-28", "text": "CMS com autenticação, correções de segurança, design premium e dark mode." },
+        { "date": "2026-03-14", "text": "Redesign com layout moderno e seções completas por órgão." }
+      ]
+    },
+    {
+      "id": "sistema-guilis-huol",
+      "name": "Sistema-Guilis-Huol",
+      "repo": "guimota111/Sistema-Guilis-Huol",
+      "visibility": "private",
+      "category": "outros",
+      "status": "arquivado",
+      "url": null,
+      "stack": ["Python (CustomTkinter)", "AutoHotkey"],
+      "summary": "Cópia congelada do Sistema GUILIS na migração para Python (mesmo commit da main do GuilisAHK, de março/2026). O desenvolvimento continua no GuilisAHK.",
+      "lastActivity": "2026-03-15",
+      "updates": [
+        { "date": "2026-03-15", "text": "Reorganização de menu, ícone da taskbar e correção de hotkeys." }
+      ]
+    },
+    {
+      "id": "whatdoipick",
+      "name": "What do I Pick",
+      "repo": "guimota111/whatdoipick",
+      "visibility": "private",
+      "category": "pessoal",
+      "status": "ativo",
+      "url": "https://whatdoipick.com",
+      "stack": ["Next.js", "Supabase (Postgres + pgvector)", "Python (ingestão)", "Vercel"],
+      "summary": "Site para escolher o próximo jogo, livro, filme ou série combinando filtros, notas da crítica, premiações, recomendações por embeddings e a sua biblioteca pessoal. Catálogo alimentado por IGDB, TMDB, Open Library, OpenCritic e Wikidata.",
+      "lastActivity": "2026-11-09",
+      "updates": [
+        { "date": "2026-11-09", "text": "Catálogo enxuto com vetores halfvec(768) e carga em massa com busca nas fontes direto do site." },
+        { "date": "2026-11-09", "text": "Login com Google pelo Supabase, URLs de produção e retorno do OAuth corrigido." },
+        { "date": "2026-11-09", "text": "Páginas de privacidade e termos; deploy na Vercel com guia de domínio." },
+        { "date": "2026-11-09", "text": "Primeira versão: catálogo, biblioteca, recomendações, prêmios e importação." }
+      ]
+    },
+    {
+      "id": "patoteca",
+      "name": "Patoteca (Clube do Livro)",
+      "repo": "guimota111/clubedolivro",
+      "visibility": "public",
+      "category": "pessoal",
+      "status": "ativo",
+      "url": "https://clube-do-livro-16073.web.app/",
+      "stack": ["React", "Vite", "Firebase Firestore/Storage/Hosting", "PWA + Web Push (Cloudflare Worker)"],
+      "summary": "Clube do livro entre amigos sem login: todos leem o mesmo livro e uma estante viva mostra em tempo real quem avança mais rápido. Eleição do próximo livro com apuração, comentários, atividades, avisos no celular e widget de iOS. Estética de biblioteca vintage.",
+      "lastActivity": "2026-11-08",
+      "updates": [
+        { "date": "2026-11-08", "text": "Ganhou um menu: uma página por assunto." },
+        { "date": "2026-10-28", "text": "Apuração vira espetáculo: voto a voto, com pódio, e elege dois livros." },
+        { "date": "2026-10-21", "text": "O eleito vai para a fila e trocar o livro por engano tem volta." },
+        { "date": "2026-10-21", "text": "Busca de livros com chave própria da Google Books e uma segunda fonte." },
+        { "date": "2026-10-21", "text": "O clube passa a eleger o próximo livro." }
+      ]
+    },
+    {
+      "id": "tamagochi-me",
+      "name": "Tamagochi Me (novo-life-hub)",
+      "repo": "guimota111/novo-life-hub",
+      "visibility": "public",
+      "category": "pessoal",
+      "status": "ativo",
+      "url": "https://tamagochi-back-end--tamagochi-db43c.us-central1.hosted.app/",
+      "stack": ["Next.js (App Router)", "TypeScript", "Tailwind", "Firebase Auth/Firestore/App Hosting"],
+      "summary": "Seu tracker de hábitos pessoal com mascote Tamagochi que evolui: hidratação e creatina (via NFC/Atalhos do iOS), passos e saúde (Health Auto Export), treinos (SmartGym), leitura, estudo, filmes, meditação, expediente, metas e recordes.",
+      "lastActivity": "2026-11-08",
+      "updates": [
+        { "date": "2026-11-08", "text": "Ícone do app no perfil do menu." },
+        { "date": "2026-10-20", "text": "Galeria de mascotes no perfil e ramificações contextuais do mascote." },
+        { "date": "2026-10-13", "text": "Mascote Tamagochi que evolui." },
+        { "date": "2026-09-21", "text": "Busca de filmes (TMDB) e livros (Google Books) ao adicionar." },
+        { "date": "2026-09-09", "text": "Aba Treinos com importação do SmartGym, registro manual e progressão." }
+      ]
+    },
+    {
+      "id": "liferats",
+      "name": "LifeRats",
+      "repo": "guimota111/LifeRat",
+      "visibility": "public",
+      "category": "pessoal",
+      "status": "inicial",
+      "url": null,
+      "stack": ["Expo (React Native)", "TypeScript", "Expo Router", "Supabase"],
+      "summary": "App nativo (iOS/Android) de hábitos com competição entre amigos: registro em um toque, integração com relógio, apps de saúde e Strava, catálogos de mídia e desafios em clubes com regras do criador. Está na fase 1 (schema + app base).",
+      "lastActivity": "2026-10-16",
+      "updates": [
+        { "date": "2026-10-16", "text": "Correções na web (sem SSR) e nas regras do banco de clubes/participantes; cliente Supabase tipado." },
+        { "date": "2026-10-13", "text": "Fase 1: schema Supabase e app Expo; brief de produto." }
+      ]
+    },
+    {
+      "id": "new-money-hub",
+      "name": "New Money Hub",
+      "repo": "guimota111/new-money-hub",
+      "visibility": "public",
+      "category": "pessoal",
+      "status": "pausado",
+      "url": null,
+      "stack": ["Next.js 16", "TypeScript", "Tailwind", "Supabase", "Vercel"],
+      "summary": "Organizador financeiro pessoal para casais: contas e despesas (com sync do Nubank), ativos com cotações, renda passiva e um 'Consultor de Alocação' com IA que analisa a carteira, lê notícias e gera lista de compras.",
+      "lastActivity": "2026-09-05",
+      "updates": [
+        { "date": "2026-09-05", "text": "Consultor de Alocação em 6 entregas: categorias e metas, ativos dos EUA, fundamentos, análises com IA, notícias e histórico." },
+        { "date": "2026-09-04", "text": "Tema cyberpunk, página de Anos, filtros e telas responsivas." },
+        { "date": "2026-09-04", "text": "Compras de investimento e pagamento de fatura deixam de contar como despesa." }
+      ]
+    },
+    {
+      "id": "choppermoney",
+      "name": "ChopperMoney",
+      "repo": "guimota111/ChopperMoney",
+      "visibility": "public",
+      "category": "pessoal",
+      "status": "pausado",
+      "url": "https://choppermoney-6f008.web.app/",
+      "stack": ["React", "Vite", "TypeScript", "Firebase (Auth, Firestore, Functions)", "Recharts"],
+      "summary": "Patrimônio do casal num lugar só, com tema do Chopper: renda fixa marcada na curva, renda variável (B3, EUA, cripto), dividendos, reserva de emergência e projeções, com cotações via Cloud Functions.",
+      "lastActivity": "2026-07-08",
+      "updates": [
+        { "date": "2026-07-08", "text": "Correção do erro de aporte e opção sem vencimento; artes do Chopper otimizadas." },
+        { "date": "2026-07-08", "text": "Projeto inicial com Functions de cotações, snapshot diário e dividendos." }
+      ]
+    },
+    {
+      "id": "crushgames",
+      "name": "Crush Games",
+      "repo": "guimota111/crushgames",
+      "visibility": "public",
+      "category": "pessoal",
+      "status": "estável",
+      "url": "https://guimota111.github.io/crushgames/",
+      "stack": ["HTML/CSS/JS", "Firebase Firestore", "Tampermonkey"],
+      "summary": "Joguinhos e utilitários do casal: roleta do jantar, notas de comida, comparador de imóveis (Moving Out, com mapa, distância e coletor de anúncios) e lista de compras sincronizada.",
+      "lastActivity": "2026-08-23",
+      "updates": [
+        { "date": "2026-08-23", "text": "Lista de Compras com sincronização em tempo real." },
+        { "date": "2026-08-16", "text": "Moving Out: comparar imóveis, mapa e distância até o trabalho, coletor de anúncios da imobiliária." },
+        { "date": "2026-07-19", "text": "Notas de Comida com backend Firebase." }
+      ]
+    },
+    {
+      "id": "aposta",
+      "name": "Aposta com a Luana",
+      "repo": "guimota111/aposta",
+      "visibility": "public",
+      "category": "pessoal",
+      "status": "estável",
+      "url": "https://guimota111.github.io/aposta/",
+      "stack": ["HTML/CSS/JS"],
+      "summary": "Competição diária de hábitos com a amiga Luana, em temporadas: água (garrafinhas), passos, meditação e leitura, com placar, pontuação e histórico.",
+      "lastActivity": "2026-08-02",
+      "updates": [
+        { "date": "2026-08-02", "text": "Nova temporada com garrafinhas de água, passos e meditação." },
+        { "date": "2026-08-02", "text": "Aba antiga do site não zera mais o dia em andamento." },
+        { "date": "2026-07-30", "text": "Placar da temporada corrigido para bater com o histórico." }
+      ]
+    },
+    {
+      "id": "belinha",
+      "name": "Passeios da Belinha",
+      "repo": "guimota111/belinha",
+      "visibility": "public",
+      "category": "pessoal",
+      "status": "estável",
+      "url": "https://belinha-de4ed.web.app/",
+      "stack": ["HTML/CSS/JS", "Firebase Hosting + Firestore"],
+      "summary": "Registro dos passeios da cachorra Belinha, com estatísticas de quem levou e quando.",
+      "lastActivity": "2026-08-21",
+      "updates": [
+        { "date": "2026-08-21", "text": "Layout responsivo em duas colunas no desktop e figurinha de cachorro." },
+        { "date": "2026-08-21", "text": "App inicial de registro dos passeios." }
+      ]
+    },
+    {
+      "id": "mrv",
+      "name": "MRV — Consolidação de Briefings",
+      "repo": "guimota111/MRV",
+      "visibility": "public",
+      "category": "outros",
+      "status": "protótipo",
+      "url": null,
+      "stack": ["Next.js", "Firebase (Firestore, Functions, Storage)", "Claude API (tool use)", "Excel"],
+      "summary": "Ferramenta interna (protótipo) que lê atas de reuniões de briefing de instalações da MRV, extrai os temas com a API do Claude, acumula o histórico por empreendimento, detecta assuntos recorrentes entre obras e exporta Excel.",
+      "lastActivity": "2026-08-18",
+      "updates": [
+        { "date": "2026-08-18", "text": "Erros das callable functions traduzidos e explicados na interface." },
+        { "date": "2026-08-18", "text": "Regras do Firestore corrigidas e cobertas por testes; projeto Firebase mrvbraga configurado." },
+        { "date": "2026-08-18", "text": "Primeira versão: extração de temas, recorrência, dashboard e exportação." }
+      ]
+    },
+    {
+      "id": "guilis-hub",
+      "name": "Guili's Hub",
+      "repo": "guimota111/GuilisHub",
+      "visibility": "public",
+      "category": "outros",
+      "status": "estável",
+      "url": "https://guimota111.github.io/GuilisHub/",
+      "stack": ["HTML/CSS/JS", "GitHub Pages"],
+      "summary": "Cartão de visita digital com links para todos os seus sites, agrupados em seções (trabalho, estudo, HUOL, pessoal). O conteúdo fica todo em sites.js.",
+      "lastActivity": "2026-09-18",
+      "updates": [
+        { "date": "2026-09-18", "text": "8 sites novos adicionados a partir dos outros repositórios." },
+        { "date": "2026-07-02", "text": "Estadiador e Crush Games adicionados; 11 sites organizados em seções." }
+      ]
+    },
+    {
+      "id": "guilis-stats",
+      "name": "GUILIS Stats",
+      "repo": "guimota111/guilis-stats",
+      "visibility": "public",
+      "category": "outros",
+      "status": "arquivado",
+      "url": null,
+      "stack": ["Python", "FastAPI", "SQLAlchemy", "Dashboard em Python"],
+      "summary": "Servidor que recebia logs diários do iOS Shortcuts/Apple Health e calculava um 'escore de qualidade do dia' com dashboard. Ideia que depois foi para o Tamagochi Me.",
+      "lastActivity": "2026-03-16",
+      "updates": [
+        { "date": "2026-03-16", "text": "Versão 1.0: API de logs, scoring e dashboard." }
+      ]
+    },
+    {
+      "id": "steppal",
+      "name": "StepPal (TamagochiSystem)",
+      "repo": "guimota111/TamagochiSystem",
+      "visibility": "public",
+      "category": "outros",
+      "status": "arquivado",
+      "url": null,
+      "stack": ["React (JSX via CDN)"],
+      "summary": "Protótipo de visualização de passos em um único HTML, antecessor das ideias do Tamagochi Me.",
+      "lastActivity": "2026-06-04",
+      "updates": [
+        { "date": "2026-06-04", "text": "Arquivos enviados (StepPal.html, componentes e dados)." }
+      ]
+    },
+    {
+      "id": "fastpath2",
+      "name": "Fastpath2",
+      "repo": "guimota111/Fastpath2",
+      "visibility": "public",
+      "category": "outros",
+      "status": "vazio",
+      "url": null,
+      "stack": [],
+      "summary": "Repositório criado e ainda vazio (só README).",
+      "lastActivity": "2026-07-09",
+      "updates": [
+        { "date": "2026-07-09", "text": "Initial commit." }
+      ]
+    },
+    {
+      "id": "bookrat",
+      "name": "BookRat",
+      "repo": "guimota111/BookRat",
+      "visibility": "public",
+      "category": "outros",
+      "status": "vazio",
+      "url": null,
+      "stack": [],
+      "summary": "Repositório vazio, sem nenhum commit ainda.",
+      "lastActivity": null,
+      "updates": []
+    }
+  ]
+}
